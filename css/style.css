@@ -1,0 +1,931 @@
+/**
+ * fil: css/style.css
+ **/
+/* Reset: Meyer Style */
+/* fjerner default browser styles */
+@import 'reset.css';
+@import url("https://use.typekit.net/esw6ftl.css");
+
+/* Farve- og fontvariabler */
+:root {
+  /* Farver */
+  --background: green;
+  --green: #326814;
+  /* Fonte */
+  --overskrift: 'font-family: expressway', sans-serif;
+  /*font-family: expressway, sans-serif;
+  font-weight: 400;
+  font-style: normal;*/
+  --broedtekst: 'font-family: expressway', sans-serif;
+}
+
+body {
+  /* Baggrundsfarve */
+  background-color: var(--green);
+}
+
+#wrap {}
+
+.logo {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+/* Her bruges en variabel: --blue */
+/* Navigation*/
+header {
+  color: var(--green);
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--green);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+#menu {
+  flex: 25%;
+}
+
+#menu li a {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: grey;
+}
+
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+/* Forsidevideo mobil */
+video {
+  width: 100%;
+  height: auto;
+}
+
+#forsidevideo {
+  position: relative;
+  height: 50%;
+}
+
+section {
+  background-color: var(--green)
+}
+
+/* Wrap */
+#wrap {
+  min-height: 100vh;
+}
+
+/* SoMe ikoner i footer */
+.fb img {
+  width: 35px;
+  height: auto;
+  opacity: 90;
+  float: right;
+  margin-right: 2px;
+}
+
+.insta img {
+  width: 35px;
+  height: auto;
+  opacity: 90;
+  top: 100px;
+  float: right;
+  padding-right: 8px;
+  padding-bottom: 10px;
+}
+
+/* Mobile first */
+@media only screen and (max-width: 375px) {
+
+/* Forsidebillede- og tekst mobil */
+#vindweb {
+  display: none;
+}
+
+#vindmobil {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#forsidebilledweb {
+  display: none;
+}
+
+#forsidebilledemobil {
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-bottom: 12px;
+}
+
+/* Om konceptet-billede- og tekst mobil */
+
+#omweb {
+  display: none;
+}
+
+#omweb h3{
+  display: none;
+}
+
+#ommobil h1 {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  padding-bottom: 8px;
+  padding-top: 20px;
+}
+
+#ommobil h2 {
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  margin-left: 60px;
+  margin-right: 60px;
+  line-height: 1.8;
+}
+
+#ommobil h3 {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 8px;
+}
+
+#ombilledemobil {
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-bottom: 12px;
+}
+
+#ombilledeweb {
+  display: none;
+}
+
+/* Miljoebevidste cyklister mobil */
+
+  #miljoemobil h3{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #miljoemobil p{
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 2.5;
+  }
+
+  #miljoebilledemobil{
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 12px;
+  }
+
+#miljoebilledeweb {
+  display: none;
+}
+
+#miljoeweb h3{
+  display: none;
+}
+
+#miljoeweb p{
+  display: none;
+}
+
+/* De bedste steder at cykle i Danmark mobil */
+
+#stedermobil h1{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+#stedermobil h2{
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  margin-left: 60px;
+  margin-right: 60px;
+  line-height: 2.7;
+}
+
+#stederbilledemobil{
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-bottom: 12px;
+}
+
+#stederbilledeweb {
+display: none;
+}
+
+#stederweb h1{
+display: none;
+}
+
+#stederweb h2{
+display: none;
+}
+
+/* Vind en mountainbike mobil */
+
+#vindmtbmobil h1{
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+#vindmtbmobil h2{
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  margin-left: 60px;
+  margin-right: 60px;
+  line-height: 2.2;
+}
+
+#vindmtbbilledemobil{
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-bottom: 12px;
+}
+
+#vindmtbbilledeweb {
+display: none;
+}
+
+#vindmtbweb h1{
+display: none;
+}
+
+#vindmtbweb h2{
+display: none;
+}
+
+
+}
+
+/* 2. Tablets mv. */
+@media only screen and (max-width: 779px) {
+
+  /* Forsidebillede- og tekst tablet */
+  #vindtablet {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+
+  #vindmobil{
+    display: none;
+  }
+
+  #vindweb{
+    display: none;
+  }
+
+  #forsidebilledetablet {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 55px;
+    padding-top: 10px;
+  }
+
+  #forsidebilledemobil{
+    display: none;
+  }
+
+  #forsidebilledweb{
+    display: none;
+  }
+
+  /* De bedste steder at cykle i Danmark tablet */
+
+  #stedertablet h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #stedertablet h2{
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 2.7;
+  }
+
+  #stederbilledetablet{
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 12px;
+  }
+
+  #stederbilledeweb {
+  display: none;
+  }
+
+  #stederbilledemobil {
+  display: none;
+  }
+
+  #stederweb h1{
+  display: none;
+  }
+
+  #stedermobil h1{
+  display: none;
+  }
+
+  #stederweb h2{
+  display: none;
+  }
+
+  #stedermobil h2{
+  display: none;
+  }
+
+  /* Vind en mountainbike tablet */
+
+  #vindmtbtablet h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #vindmtbtablet h2{
+    font-size: 15px;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 2.7;
+    text-align: center;
+  }
+
+  #vindmtbbilledetablet{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+
+  #vindmtbbilledemobil {
+  display: none;
+  }
+
+  #vindmtbbilledeweb {
+  display: none;
+  }
+
+  #vindmtbmobil h1{
+  display: none;
+  }
+
+  #vindmtbweb h1{
+  display: none;
+  }
+
+  #vindmtbmobil h2{
+  display: none;
+  }
+
+  #vindmtbweb h2{
+  display: none;
+  }
+
+  /* Miljoebevidste cyklister tablet */
+
+    #miljoetablet h3{
+      font-weight: bold;
+      font-size: 22px;
+      text-align: center;
+      color: white;
+      padding-bottom: 10px;
+      padding-top: 20px;
+    }
+
+    #miljoetablet p{
+      font-size: 15px;
+      text-align: center;
+      color: white;
+      padding-bottom: 20px;
+      padding-top: 5px;
+      margin-left: 60px;
+      margin-right: 60px;
+      line-height: 2.5;
+    }
+
+    #miljoebilledetablet{
+      margin-left: 18px;
+      margin-right: 18px;
+      margin-bottom: 12px;
+    }
+
+  #miljoebilledeweb {
+    display: none;
+  }
+
+  #miljoebilledemobil {
+    display: none;
+  }
+
+  #miljoeweb h3{
+    display: none;
+  }
+
+  #miljoemobil h3{
+    display: none;
+  }
+
+  #miljoeweb p{
+    display: none;
+  }
+
+  #miljoemobil p{
+    display: none;
+  }
+
+  /* Om konceptet-billede- og tekst tablet */
+
+  #omweb {
+    display: none;
+  }
+
+  #ommobil {
+    display: none;
+  }
+
+  #omweb h3{
+    display: none;
+  }
+
+  #ommobil h3{
+    display: none;
+  }
+
+  #omtablet h1 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 8px;
+    padding-top: 20px;
+  }
+
+  #omtablet h2 {
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 1.8;
+  }
+
+  #omtablet h3 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 8px;
+  }
+
+  #ombilledetablet {
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 12px;
+  }
+
+  #ombilledeweb {
+    display: none;
+  }
+
+  #ombilledemobil {
+    display: none;
+  }
+
+
+}
+
+/* 3. Stor skærm */
+@media only screen and (min-width: 780px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  /* Forsidebillede- og tekst web */
+
+  #vindweb {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+
+  #vindmobil{
+    display: none;
+  }
+
+  #vindtablet{
+    display: none;
+  }
+
+  #forsidebilledweb {
+    padding-left: 220px;
+    padding-right: 220px;
+    padding-bottom: 55px;
+    padding-top: 10px;
+  }
+
+  #forsidebilledemobil{
+    display: none;
+  }
+
+  #forsidebilledetablet{
+    display: none;
+  }
+
+  /* Om konceptet-billede- og tekst web */
+
+  #ommobil {
+    display: none;
+  }
+
+  #omtablet {
+    display: none;
+  }
+
+  #omweb h1 h2{
+    float: left;
+    display: flex;
+  }
+
+  #ombilledeweb{
+    float: right;
+    display: flex;
+  }
+
+
+  #omweb h1 {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    padding-bottom: 8px;
+  }
+
+  #omweb h2 {
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    line-height: 2.5;
+    padding-left: 480px;
+    padding-right: 480px;
+  }
+
+  #omweb h3 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 8px;
+  }
+
+  #ombilledeweb {
+    padding-left: 220px;
+    padding-right: 220px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+  }
+
+  #ombilledemobil {
+    display: none;
+  }
+
+  #ombilledetablet {
+    display: none;
+  }
+
+  #ommobil h3{
+    display:none;
+  }
+
+  #omtablet h3{
+    display:none;
+  }
+
+  /* Miljøbevidste cyklister-billede- og tekst web */
+
+#miljoebilledemobil{
+  display: none;
+}
+
+#miljoebilledetablet{
+  display: none;
+}
+
+#miljoemobil {
+  display: none;
+}
+
+#miljoetablet {
+  display: none;
+}
+
+#miljoeweb h3{
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  padding-bottom: 12px;
+  padding-top: 20px;
+}
+
+  .miljoeweb{
+    column-count: 2;
+      font-size: 15px;
+      color: white;
+      margin-left: 23%;
+      margin-right: 23%;
+      line-height: 2.5;
+  }
+
+  #miljoebilledeweb{
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+
+  /* De bedste steder at cykle i Danmark web */
+
+  #stederweb h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+
+  #stederbilledeweb{
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+
+  #stederbilledemobil {
+  display: none;
+  }
+
+  #stederbilledetablet{
+  display: none;
+  }
+
+  #stedermobil h1{
+  display: none;
+  }
+
+  #stedertablet h1{
+  display: none;
+  }
+
+  #stedermobil h2{
+  display: none;
+  }
+
+  #stedertablet h2{
+  display: none;
+  }
+
+  .stederweb1{
+    column-count: 2;
+      font-size: 16px;
+      color: white;
+      margin-left: 20%;
+      margin-right: 20%;
+      line-height: 2.8;
+  }
+
+  /* Vind en mountainbike web */
+
+  #vindmtbweb h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #vindmtbweb h2{
+    font-size: 15px;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 400px;
+    padding-right: 400px;
+    margin-left: 107px;
+    margin-right: 100px;
+    line-height: 2.7;
+    text-align: center;
+  }
+
+  #vindmtbbilledeweb{
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+
+  #vindmtbbilledemobil {
+  display: none;
+  }
+
+  #vindmtbbilledetablet {
+  display: none;
+  }
+
+  #vindmtbmobil h1{
+  display: none;
+  }
+
+  #vindmtbtablet h1{
+  display: none;
+  }
+
+  #vindmtbmobil h2{
+  display: none;
+  }
+
+  #vindmtbtablet h2{
+  display: none;
+  }
+
+
+}
